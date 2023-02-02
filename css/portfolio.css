@@ -498,6 +498,14 @@ img{
     transform: rotate(-180deg);
 }
 
+
+.skill_list{
+
+}
+.skill_list li{
+    list-style-type: none;
+}
+
 /*====================== QUALIFICATION ==============*/
 
 .qualification_tabs{
