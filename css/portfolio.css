@@ -188,6 +188,7 @@ img{
 .nav_toggle{
     font-size: 1.1rem;
     cursor: pointer;
+    margin: 0% 0% 0% -280%;
 }
 .nav_toggle:hover{
     color: var(--first-color);
@@ -243,7 +244,7 @@ img{
     bottom: 0;
 }
 /* Active link */
-.active-link{
+.active{
     color: var(--first-color);
 }
 /* Change background header */
@@ -284,16 +285,16 @@ img{
 }
 .home_title{
     font-size: 30px;
-    margin-bottom:8px;
+    margin-bottom:0px;
 }
 .home_subtitle{
     font-size: 17px;
     color: var(--text-color);
     font-weight: var(--font-medium);
-    margin-bottom: var(--mb-0-75);
+    margin-bottom: 20px;
 }
 .home_description{
-    margin-bottom: 120px;
+    margin-bottom: 65px;
 }
 .home_scroll{
     display: none;
@@ -762,9 +763,10 @@ img{
     color: var(--text-color-light);
 }
 .contact_content{
-    background-color: var(--input-color);
-    border-radius: .5rem;
-    padding: .75rem 1rem .25rem;
+    background-color: hsl(240deg 4% 89%);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 1rem;
+}
 }
 .contact_label{
     font-size: var(--small-font-size);
@@ -772,7 +774,7 @@ img{
 }
 .contact_input{
     width: 100%;
-    background-color: var(--input-color);
+    background-color: var(0deg 0% 89% / 95%);
     color:var(--text-color);
     font-family: var(--body-font);
     font-size: var(--normal-font-size);

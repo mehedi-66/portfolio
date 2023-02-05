@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="../css/portfolio.css">
     <!-- ============= incon ================= -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("14c8IbNyW2u7sNKUO");
+    })();
+</script>
 </head>
 <body>
     
@@ -23,7 +30,7 @@
          <div class="nav_menu" id="nav-menu">
              <ul class="nav_list grid">
                  <li class="nav_item">
-                     <a href="../index.html" class="nav_link active-link">
+                     <a href="../index.html" class="nav_link">
                          <i class="uil uil-estate"></i> Home
                      </a>
                  </li>
@@ -114,33 +121,33 @@
                 </div>
              </div>
 
-            <form action="" class="contact_form grid">
+            <div  action="" class="contact_form grid">
                 <div class="contact_inputs grid">
                     <div class="contact_content">
                         <label for="" class="contact_label">Name</label>
-                        <input type="text" class="contact_input">
+                        <input type="text" class="contact_input" id="userName" >
                     </div>
                     <div class="contact_content">
                         <label for="" class="contact_label">Email</label>
-                        <input type="email" class="contact_input">
+                        <input type="email" class="contact_input" id="userEmail">
                     </div>
                 </div>
 
                 <div class="contact_content">
-                    <label for="" class="contact_label">project</label>
-                    <input type="text" class="contact_input">
+                    <label for="" class="contact_label">Subject</label>
+                    <input type="text" class="contact_input" id="userSubject">
                 </div>
                 <div class="contact_content">
                     <label for="" class="contact_label">Message</label>
-                   <textarea name="" id="" cols="0" rows="7" class="contact_input"></textarea>
+                   <textarea name="" cols="0" rows="7" class="contact_input" id="userMassage"></textarea>
                 </div>
                 <div>
-                    <a href="#" class="button button-flex">
+                    <a onclick="sendMail()" href="#" class="button button-flex">
                         Send Message
                         <i class="uil uil-message button_icon"></i>
                     </a>
                 </div>
-            </form>
+            </div>
 
 
         </div>
@@ -193,6 +200,22 @@
  <script src="../js/portfolio.js"></script>
  <script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
 
+<script >
+    function sendMail(){
+        let params = {
+            from_name: document.getElementById("userSubject").value,
+            sender_name: document.getElementById("userName").value,
+            email_id: document.getElementById("userEmail").value,
+            message: document.getElementById("userMassage").value 
 
+        };
+
+        emailjs.send("service_bfjvbwg", "template_opvkr4p", params).then(function(res) {
+            alert("Successfully send your Email ");
+        }).catch(function(res){
+            alert("Not Send your Email ");
+        });
+    }
+</script>
 </body>
 </html>
